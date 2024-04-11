@@ -6,7 +6,7 @@
 ;-------------------------------------------------------------------------------------------;
 
 section .data
-	msg db "Hello World!", 0x0A, 0 ; Initialize 'Hello, World!' string.	
+	msg db "Hello World!", 0x0A, 0 ; Initialize 'Hello, World!' string.
 
 section .text
 	global _start
@@ -24,7 +24,7 @@ _start:
 ;   - rax holds length of string
 _strlen:
 	xor rax, rax
-	_strlen_loop:	
+	_strlen_loop:
 		cmp byte [rsi+rax], 0
 		je _return
 		inc rax
@@ -37,7 +37,7 @@ _return:
 ;  - rdx has string length
 ;  - rsi has the string
 _print:
-	mov rax, 1		
+	mov rax, 1
 	mov rdi, 1
 	syscall
 	ret
